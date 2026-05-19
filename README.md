@@ -1,13 +1,7 @@
 # 2inf
 
-#Equipe 1
-##Nome do Integrante 1
-##Nome do Integrante 2
-##Nome do Integrante 3
-##Nome do Integrante 4
-
-#Equipe 2
-##Nome do Integrante 1
-##Nome do Integrante 2
-##Nome do Integrante 3
-##Nome do Integrante 4
+#Equipe 3
+##João Vitor da Silva e Silva
+##José Cauã Rodrigues Santana
+##Maria Aparecida de Souza Teles
+##Sara Rodrigues da Silva
