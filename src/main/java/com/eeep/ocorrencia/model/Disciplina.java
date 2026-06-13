@@ -1,15 +1,16 @@
 package com.eeep.ocorrencia.model;
 
 public class Disciplina {
-    private String nome;
+
     private Integer codigo;
+    private String nome;
 
     public Disciplina() {
     }
 
-    public Disciplina(String nome, Integer codigo) {
-        this.nome = nome;
+    public Disciplina(Integer codigo, String nome) {
         this.codigo = codigo;
+        this.nome = nome;
     }
 
     public Integer getCodigo() {

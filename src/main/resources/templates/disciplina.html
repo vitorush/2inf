@@ -1,10 +1,151 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Cadastro de Disciplinas</title>
+    <style>
+        * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: "Segoe UI", sans-serif;
+        background: #eef7ee;
+        padding: 40px;
+        color: #2c3e2c;
+    }
+
+    h1 {
+        text-align: center;
+        color: #2e7d32;
+        margin-bottom: 30px;
+    }
+
+    form {
+        width: 350px;
+        margin: 0 auto;
+        background: white;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 600;
+    }
+
+    input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #c8e6c9;
+        border-radius: 8px;
+        margin-bottom: 15px;
+    }
+
+    input:focus {
+        outline: none;
+        border-color: #4caf50;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+        border: none;
+        border-radius: 8px;
+        background: #43a047;
+        color: white;
+        font-size: 15px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background: #2e7d32;
+    }
+
+    hr {
+        margin: 40px auto;
+        width: 80%;
+        border: none;
+        height: 1px;
+        background: #c8e6c9;
+    }
+
+    h2 {
+        text-align: center;
+        color: #2e7d32;
+        margin-bottom: 20px;
+    }
+
+    table {
+        width: 80%;
+        margin: 0 auto;
+        border-collapse: collapse;
+        background: white;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    th {
+        background: #43a047;
+        color: white;
+        padding: 14px;
+    }
+
+    td {
+        padding: 12px;
+        text-align: center;
+        border-bottom: 1px solid #e0e0e0;
+    }
+
+    tr:hover {
+        background: #f1f8f1;
+    }
+    </style>
+
 </head>
 <body>
+
+<h1>Cadastro de Disciplinas</h1>
+
+<form th:action="@{/disciplina/salvar}"
+      th:object="${disciplina}"
+      method="post">
+
+    <label for="codigo">Código:</label>
+    <input type="number" id="codigo" th:field="*{codigo}">
+    <br><br>
+
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" th:field="*{nome}">
+    <br><br>
+
+    <button type="submit">Salvar</button>
+
+</form>
+
+<hr>
+
+<h2>Disciplinas Cadastradas</h2>
+
+<table border="1">
+    <thead>
+    <tr>
+        <th>Código</th>
+        <th>Nome</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="d : ${listaDisciplinas}">
+        <td th:text="${d.codigo}"></td>
+        <td th:text="${d.nome}"></td>
+    </tr>
+    </tbody>
+</table>
 
 </body>
 </html>

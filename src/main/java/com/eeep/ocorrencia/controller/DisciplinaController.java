@@ -3,25 +3,33 @@ package com.eeep.ocorrencia.controller;
 import com.eeep.ocorrencia.model.Disciplina;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
-import java.util.List;
 
 @Controller
+@RequestMapping("/disciplina")
 public class DisciplinaController {
 
-    @GetMapping("/disciplina")
+    private ArrayList<Disciplina> listaDisciplinas = new ArrayList<>();
+
+    @GetMapping
     public String abrirFormulario(Model model) {
 
-        List<Disciplina> disciplinas = new ArrayList<>();
+        model.addAttribute("disciplina", new Disciplina());
+        model.addAttribute("listaDisciplinas", listaDisciplinas);
 
-        disciplinas.add(new Disciplina());
-        disciplinas.add(new Disciplina());
-        disciplinas.add(new Disciplina());
+        return "disciplina";
+    }
 
-        model.addAttribute("listaDisciplinas", disciplinas);
+    @PostMapping("/salvar")
+    public String salvarDisciplina(Disciplina disciplina) {
 
-        return "disciplina.html";
+        listaDisciplinas.add(disciplina);
+
+        System.out.println(disciplina.getCodigo());
+        System.out.println(disciplina.getNome());
+
+        return "redirect:/disciplina";
     }
 }
