@@ -1,6 +1,6 @@
 # 2inf
 
-\#Equipe 1
+\#Equipe 3
 ##João Vitor da Silva e Silva
 
 \##José Cauã Rodrigues Santana
