@@ -8,4 +8,9 @@
 \##Sara Rodrigues da Silva
 
 \##Maria Aparecida de Souza Teles
+#Equipe 1
+##Carla Chrislany
+##Manuelle Brasil
+##Maria Eduarda Soares
+##Rafaella Aguinys
 
