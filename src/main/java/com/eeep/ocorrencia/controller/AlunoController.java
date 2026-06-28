@@ -21,6 +21,11 @@ public class AlunoController {
 
     }
     @PostMapping("/salvar")
+    public String salvarAluno(Aluno aluno){
+        System.out.println(aluno.getNumero());
+        System.out.println(aluno.getNome());
+        System.out.println(aluno.getSexo());
+        return "cadastro";
     public String salvarAluno(@ModelAttribute("aluno") Aluno aluno){
         System.out.println(aluno.getNumero());
         System.out.println(aluno.getNome());
